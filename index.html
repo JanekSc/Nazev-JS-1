@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="Pocetni priklat.js"></script>
+    <title>Výpočet obvodu a obsahu kruhu</title>
+    <script src="Pocetni priklat.js" defer></script>
 </head>
 <body>
-   
-    Poloměr kruhu: <input type="number" oninput="obvod(this);obsah(this);"> metrů<br>
-    Obvod kruhu: <span id="obvod"></span> metrů<br></br>
-    Osah kruhu: <span id="obsah"></span> metrů<br></br>
-</body>
-</html>
+	<h2>Jak používat tuto tabulku</h2>
+	<p>Zadejte poloměr kruhu v prvním řádku a tabulka vypočte jeho obvod a obsah.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Poloměr v m&nbsp;&nbsp;&nbsp;</th> 
+				<th>Obvod v m&nbsp;&nbsp;&nbsp;</th>
+				<th>Obsah v <span>m<sup>2</sup></span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="number" id="polomer"></td>
+				<td><span id="obvod"></span></td>
+				<td><span id="obsah"></span></td>
+			</tr>
+            <tr>
+                <td>Poloměr:</td>
+                <td><input type="number" id="polomer"></td>
+              </tr>
+              <tr>
+                <td>Obvod:</td>
+                <td><input type="number" id="obvod"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><button onclick="kontrola()">Kontrola</button></td>
+              </tr>
+		</tbody>
+	</table>
+    <img src="kruh.png" alt="">
+    </body>
+    </html>

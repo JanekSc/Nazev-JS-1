@@ -1,33 +1,25 @@
-// Zeptej se uživatele na poloměr kruhu
-let polomer = prompt("Zadejte poloměr kruhu:");
-
-// Zkontroluj, zda uživatel zadal platné číslo
-if (isNaN(polomer)) {
-  alert("Zadaná hodnota není číslo.");
-} else {
-  // Vypočti obvod kruhu
+ function vypocti() {
+  let polomer = document.getElementById("polomer").value;
   let obvod = 2 * Math.PI * polomer;
+  let obsah = Math.PI * polomer * polomer;
 
-  // Vypočti obsah kruhu
-  let obsah = Math.PI * Math.pow(polomer, 2);
-
-  // Vypiš výsledky na obrazovku
-  document.write("Poloměr kruhu je:" + polomer+ "<br>");
-  document.write("Obvod kruhu je: " + obvod+ "<br>");
-  document.write("Obsah kruhu je: " + obsah+"<br>");
+  document.getElementById("obvod").innerHTML = obvod.toFixed(2);
+  document.getElementById("obsah").innerHTML = obsah.toFixed(2);
 }
 
-function polomer1(polomer) { return obvod = 2 * Math.PI *polomer}
+// Spustit výpočet po změně poloměru
+document.getElementById("polomer").addEventListener("input", vypocti);
 
-function obvod(input) {
-    let converted = polomer1 (input.value);
-    document.getElementById("obvod").innerText = converted;
+function kontrola() {
+  var polomer = document.getElementById("polomer").value;
+  var obvod = document.getElementById("obvod").value;
+  var vypocetObvodu = 2 * Math.PI * polomer;
+  var vypocetPolomeru = obvod / (2 * Math.PI);
+  console.log(document.getElementById("obvod"))
+  console.log(vypocetObvodu, document.getElementById("obvod"), obvod, vypocetPolomeru, polomer)
+  if (Math.abs(Math.round(vypocetObvodu) - Math.round(obvod)) <= 1 && Math.abs(Math.round(vypocetPolomeru) - Math.round(polomer)) <= 1) {
+    alert("Hodnoty jsou správné!");
+  } else {
+    alert("Hodnoty jsou nesprávné!");
   }
-
-  function inczk(polomer) { return obsah = Math.PI * Math.pow(polomer, 2)}
-
-function obsah(input) {
-    let converted = polomer1(input.value);
-    document.getElementById("obsah").innerText = converted;
-  }
-  
+}
